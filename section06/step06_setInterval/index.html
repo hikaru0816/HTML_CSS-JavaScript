@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIMER</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <p id="timer">00:00:00</p>
+    <div>
+      <button id="start_stop" class="btn btn-lg btn-primary">
+        START
+      </button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('start_stop').addEventListener('click', function() {
+      var start = new Date();
+
+      setInterval(goTimer, 10);
+    });
+
+    var goTimer = function() {
+      var now = new Date();
+      document.getElementById('timer').innerHTML = now.getTime();
+    }
+  </script>
+</body>
+</html>
